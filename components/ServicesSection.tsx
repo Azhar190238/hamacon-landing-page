@@ -1,74 +1,76 @@
 "use client";
 
+import Image from "next/image";
+
 const services = [
   {
-    image: "/service1.jpg",
+    image: "/services/1.jpg",
     title: "Boparai Basements",
     description:
       "Boparai Basements specializes in expert basement finishing, waterproofing, and renovation solutions for lasting comfort.",
   },
   {
-    image: "/service2.jpg",
+    image: "/services/2.jpeg",
     title: "Boparai Excavation",
     description:
       "Boparai Excavation delivers reliable, efficient, and professional excavation services for residential and commercial projects.",
   },
   {
-    image: "/service3.jpg",
+    image: "/services/3.jpg",
     title: "Boparai Piling",
     description:
       "Boparai Piling delivers reliable, high-quality foundation solutions with advanced piling techniques and expert engineering services.",
   },
   {
-    image: "/service4.jpg",
+    image: "/services/4.jpeg",
     title: "Demolition and Excavation",
     description:
       "Demolition and excavation ensure safe site preparation by clearing structures, debris, and land for new construction.",
   },
   {
-    image: "/service5.jpg",
+    image: "/services/5.jpg",
     title: "Raft Slab Concreting",
     description:
       "Expert raft slab concreting for stable, strong foundations on weak or uneven soil, ensuring durability and support.",
   },
   {
-    image: "/service6.jpg",
+    image: "/services/6.jpeg",
     title: "Waffle Slab Concreting",
     description:
       "Ensure your Waffle slab project stands the test of time with our high-quality slab concreting.",
   },
   {
-    image: "/service7.jpg",
+    image: "/services/7.jpeg",
     title: "Suspended Slab Concreting",
     description:
       "Professional suspended slab concreting for strong, elevated structures, ensuring stability and long-lasting support.",
   },
   {
-    image: "/service8.jpg",
+    image: "/services/8.jpeg",
     title: "Landscaping",
     description:
       "Landscaping transforming outdoor spaces beautifully. Creating stunning landscapes with design, planting, and maintenance.",
   },
   {
-    image: "/service9.jpg",
+    image: "/services/9.jpeg",
     title: "Crossover Footpath",
     description:
       "Providing high-quality crossover footpaths for smooth, safe vehicle and pedestrian access to properties and roads.",
   },
   {
-    image: "/service10.jpg",
+    image: "/services/10.jpg",
     title: "Retaining Walls",
     description:
       "Retaining walls provide structural support, prevent soil erosion, enhance landscaping, and add stability to outdoor spaces.",
   },
   {
-    image: "/service11.jpg",
+    image: "/services/11.jpg",
     title: "Dincel Walls",
     description:
       "Dincel walls provide durable, waterproof, and fire-resistant structural solutions with fast installation and long-lasting performance.",
   },
   {
-    image: "/service12.jpg",
+    image: "/services/12.jpg",
     title: "Termite Protection",
     description:
       "Termite protection prevents structural damage by creating barriers, using treatments, and ensuring regular inspections for safety.",
@@ -81,24 +83,26 @@ const ServicesSection = () => {
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Service Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white relative z-20 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition"
+              className="bg-white relative p-4 z-20 border rounded-xl shadow-md overflow-hidden hover:shadow-xl transition"
             >
               {/* Image */}
-              <img
+              <Image
                 src={service.image}
                 alt={service.title}
-                className="w-full h-48 object-cover"
+                height={500}
+                width={500}
+                className="w-full h-48 object-cover rounded-[10px]"
               />
               {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-2">
+              <div className="py-6">
+                <h3 className="text-xl text-center font-bold text-[#000] mb-2">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 text-sm">{service.description}</p>
+                <p className="text-gray-800 text-center">{service.description}</p>
               </div>
             </div>
           ))}

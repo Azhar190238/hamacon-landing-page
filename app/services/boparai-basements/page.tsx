@@ -1,4 +1,5 @@
 import CommonHeader from "@/components/CommonHeader";
+import Image from "next/image";
 const services = [
   {
     image: "/services/basements/1.jpg",
@@ -48,13 +49,15 @@ export default function Services() {
               className="bg-white p-4 border relative z-20 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition"
             >
               {/* Image */}
-              <img
+              <Image
                 src={service.image}
                 alt={service.title}
+                width={500}
+                height={500}
                 className="w-full h-48 object-cover rounded-[12px]"
               />
               {/* Content */}
-              <div className="p-6">
+              <div className="py-6">
                 <h3 className="text-xl font-bold text-center text-[#000] mb-2">
                   {service.title}
                 </h3>
