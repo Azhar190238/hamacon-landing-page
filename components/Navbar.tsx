@@ -94,7 +94,7 @@ const Navbar = () => {
             </div>
 
             <Link
-              href="#faqs"
+              href="/#faqs"
               className={`px-4 py-3 font-bold rounded-lg ${
                 isActive("#faqs")
                   ? "bg-[#F9651E]/20 text-[#F9651E]"
@@ -104,7 +104,7 @@ const Navbar = () => {
               FAQs
             </Link>
             <Link
-              href="#reviews"
+              href="/#reviews"
               className={`px-4 py-3 font-bold rounded-lg ${
                 isActive("#reviews")
                   ? "bg-[#F9651E]/20 text-[#F9651E]"
@@ -114,7 +114,7 @@ const Navbar = () => {
               Customer Reviews
             </Link>
             <Link
-              href="#contact"
+              href="/#contact"
               className={`px-4 py-3 font-bold rounded-lg ${
                 isActive("#contact")
                   ? "bg-[#F9651E]/20 text-[#F9651E]"
@@ -211,21 +211,21 @@ const Navbar = () => {
           )}
 
           <Link
-            href="/faqs"
+            href="/#faqs"
             onClick={() => setIsMobileMenuOpen(false)}
             className="block px-2 py-2 font-bold !text-[#000] hover:text-[#F9651E] hover:bg-blue-50 rounded"
           >
             FAQs
           </Link>
           <Link
-            href="/reviews"
+            href="/#reviews"
             onClick={() => setIsMobileMenuOpen(false)}
             className="block px-2 py-2 font-bold !text-[#000] hover:text-[#F9651E] hover:bg-blue-50 rounded"
           >
             Customer Reviews
           </Link>
           <Link
-            href="/contact"
+            href="/#contact"
             onClick={() => setIsMobileMenuOpen(false)}
             className="block px-2 py-2 font-bold !text-[#000] hover:text-[#F9651E] hover:bg-blue-50 rounded"
           >
