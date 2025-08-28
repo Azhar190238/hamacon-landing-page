@@ -73,11 +73,11 @@ const ContactForm = () => {
           </div>
           <div>
             <h3 className="text-3xl md:text-4xl font-bold mb-6 font-anton uppercase">
-              Contact <span className="text-[#233A98]">ABCON</span>
+              Contact <span className="text-[#F9651E]">ABCON</span>
             </h3>
             <p className="text-gray-600 mb-8">
               Got a project in mind or need expert advice? Call us at{" "}
-              <span className="font-semibold text-[#233A98]">
+              <span className="font-semibold text-[#F9651E]">
                 (02) 9675 7731
               </span>
               or fill out the form below — we’ll respond promptly.
@@ -104,7 +104,7 @@ const ContactForm = () => {
                     id={field}
                     value={formData[field]}
                     onChange={handleInputChange}
-                    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#233A98]"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#F9651E]"
                     required
                   />
                 </div>
@@ -121,7 +121,7 @@ const ContactForm = () => {
                   id="service"
                   value={formData.service}
                   onChange={handleInputChange}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#233A98]"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#F9651E]"
                   required
                 >
                   <option value="">Choose a service</option>
@@ -149,14 +149,14 @@ const ContactForm = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={4}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#233A98]"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#F9651E]"
                   required
                 />
               </div>
               <button
                 type="submit"
                 disabled={status.loading}
-                className="relative inline-block px-8 py-4 bg-[#233A98] text-white font-bold rounded-lg overflow-hidden transition-all duration-300 hover:bg-[#1d2f7a] disabled:opacity-60"
+                className="relative inline-block px-8 py-4 bg-[#F9651E] text-white font-bold rounded-lg overflow-hidden transition-all duration-300 hover:bg-[#1d2f7a] disabled:opacity-60"
               >
                 {status.loading ? "Sending..." : "Submit"}
               </button>
