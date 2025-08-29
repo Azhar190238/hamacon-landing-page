@@ -81,7 +81,6 @@ const ServicesSection = () => {
   return (
     <section className="pb-16 bg-gray-50 -mt-14">
       <div className="max-w-7xl mx-auto px-6">
-
         {/* Service Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {services.map((service, index) => (
@@ -102,7 +101,9 @@ const ServicesSection = () => {
                 <h3 className="text-xl text-center font-bold text-[#000] mb-2">
                   {service.title}
                 </h3>
-                <p className="text-gray-800 text-center">{service.description}</p>
+                <p className="text-gray-800 text-center">
+                  {service.description}
+                </p>
               </div>
             </div>
           ))}
@@ -124,9 +125,34 @@ const ServicesSection = () => {
               Get a FREE Quote 🚀
             </a>
           </div>
-          <p className="text-lg font-semibold text-gray-900">
-            100% Satisfaction 100% Success
-          </p>
+          <div className="flex items-center justify-center gap-3 pt-6">
+            <div className="flex -space-x-2">
+              <Image
+                src="/hero/avatar1.jpg"
+                alt="Customer"
+                width={40}
+                height={40}
+                className="w-10 h-10 rounded-full border-2 border-white"
+              />
+              <Image
+                src="/hero/avatar2.jpg"
+                alt="Customer"
+                width={40}
+                height={40}
+                className="w-10 h-10 rounded-full border-2 border-white"
+              />
+              <Image
+                src="/hero/avatar3.jpeg"
+                alt="Customer"
+                width={40}
+                height={40}
+                className="w-10 h-10 rounded-full border-2 border-white"
+              />
+            </div>
+            <span className="font-bold text-[#000]">
+              100% Satisfaction • 100% Success
+            </span>
+          </div>
         </div>
       </div>
     </section>
