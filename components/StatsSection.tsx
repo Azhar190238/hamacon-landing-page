@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { FaClock, FaDollarSign, FaFileAlt } from "react-icons/fa";
+import { ShimmerButton } from "./magicui/shimmer-button";
 
 const StatsSection = () => {
   const stats = [
@@ -76,12 +77,16 @@ const StatsSection = () => {
         {/* CTA Section */}
         <div className="text-center">
           <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-4">
-            <a
-              href="tel:+61498994149"
-              className="bg-white border border-gray-300 px-6 py-3 rounded-md shadow-sm text-gray-900 font-semibold flex items-center gap-2 hover:bg-gray-100"
-            >
-              ☎️ +61 498 994 149
-            </a>
+            <div className=" animate-bounce-slow">
+              <a href="tel:+61498994149" className="">
+                <ShimmerButton background="#FFF" className="shadow-2xl">
+                  <span>☎️</span>
+                  <span className="whitespace-pre-wrap text-center  font-medium leading-none tracking-tight text-[#000] dark:from-white dark:to-slate-900/10 lg:text-lg">
+                    +61 498 994 149
+                  </span>
+                </ShimmerButton>
+              </a>
+            </div>
             <a
               href="#quote"
               className="bg-black text-white px-6 py-3 rounded-md shadow-md font-semibold flex items-center gap-2 hover:bg-gray-800 border-2 border-yellow-500"
@@ -113,7 +118,7 @@ const StatsSection = () => {
                 className="w-10 h-10 rounded-full border-2 border-white"
               />
             </div>
-            <span className="font-bold text-[#000]">
+            <span className="font-bold text-[#fff]">
               100% Satisfaction • 100% Success
             </span>
           </div>

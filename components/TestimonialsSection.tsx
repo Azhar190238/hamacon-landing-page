@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
+import { ShimmerButton } from "./magicui/shimmer-button";
 
 const testimonials = [
   {
@@ -71,12 +72,16 @@ const ReviewsSection = () => {
 
         <div className="text-center mt-12">
           <div className="flex flex-col md:flex-row justify-center items-center gap-4">
-            <a
-              href="tel:+61498994149"
-              className="bg-white border border-gray-300 px-6 py-3 rounded-md shadow-sm text-gray-900 font-semibold flex items-center gap-2 hover:bg-[#FFC700]"
-            >
-              📞 +61 498 994 149
-            </a>
+            <div className=" animate-bounce-slow">
+              <a href="tel:+61498994149" className="">
+                <ShimmerButton background="#FFA100" className="shadow-2xl">
+                  <span>☎️</span>
+                  <span className="whitespace-pre-wrap text-center  font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                    +61 498 994 149
+                  </span>
+                </ShimmerButton>
+              </a>
+            </div>
             <a
               href="#quote"
               className="bg-black text-white px-6 py-3 rounded-md shadow-sm font-semibold flex items-center gap-2 hover:bg-gray-800 border-2 border-yellow-500"
