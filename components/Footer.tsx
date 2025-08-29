@@ -13,7 +13,7 @@ export default function Footer() {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://formspree.io/f/xgvlodqa", {
+      const response = await fetch("https://formspree.io/f/mandqkkd", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: email }),
