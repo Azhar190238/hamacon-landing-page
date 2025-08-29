@@ -66,12 +66,18 @@ export default function LeadingPractical() {
             </p>
           </AnimatedContent>
           {/* Phone Button */}
+          <AnimatedContent
+            direction="horizontal"
+            distance={100}
+            reverse={true}
+          >
           <Link
             href="tel:+61498994149"
             className="inline-flex text-xl md:text-3xl lg:text-5xl items-center gap-2  text-[#fff] font-bold py-4 rounded-lg shadow-md hover:text-yellow-500 transition"
           >
             ☎️ +61 498 994 149
           </Link>
+          </AnimatedContent>
           <AnimatedContent
             direction="vertical"
             distance={100}
