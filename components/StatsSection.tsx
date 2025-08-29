@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { FaClock, FaDollarSign, FaFileAlt } from "react-icons/fa";
 
 const StatsSection = () => {
@@ -30,23 +31,24 @@ const StatsSection = () => {
     <section
       className="relative w-full py-16 text-center"
       style={{
-        backgroundImage: "url('/hero-bg.jpg')", // replace with your background image
+        backgroundImage: "url('/bghero.jpg')", // replace with your background image
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
       {/* Yellow Overlay */}
-      <div className="absolute inset-0 bg-yellow-400 bg-opacity-80"></div>
+      <div className="absolute inset-0 bg-[#FFA100]/60"></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* Top Heading */}
         <div className="mb-12">
-          <h1 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-4">
+          <h1 className="text-lg md:text-xl font-extrabold bg-[#000] text-[#fff] mb-4 max-w-[500px] mx-auto px-4 py-1">
             Building Strong Foundations, One Slab at a Time
           </h1>
           <p className="text-lg md:text-2xl font-semibold text-gray-800">
-            We specialise in delivering lasting foundations & transforming spaces
+            We specialise in delivering lasting foundations & transforming
+            spaces
           </p>
         </div>
 
@@ -87,9 +89,34 @@ const StatsSection = () => {
               Get a FREE Quote 🚀
             </a>
           </div>
-          <p className="text-lg font-semibold text-gray-900">
-            100% Satisfaction 100% Success
-          </p>
+          <div className="flex items-center justify-center gap-3 pt-6">
+            <div className="flex -space-x-2">
+              <Image
+                src="/hero/avatar1.jpg"
+                alt="Customer"
+                width={40}
+                height={40}
+                className="w-10 h-10 rounded-full border-2 border-white"
+              />
+              <Image
+                src="/hero/avatar2.jpg"
+                alt="Customer"
+                width={40}
+                height={40}
+                className="w-10 h-10 rounded-full border-2 border-white"
+              />
+              <Image
+                src="/hero/avatar3.jpeg"
+                alt="Customer"
+                width={40}
+                height={40}
+                className="w-10 h-10 rounded-full border-2 border-white"
+              />
+            </div>
+            <span className="font-bold text-[#000]">
+              100% Satisfaction • 100% Success
+            </span>
+          </div>
         </div>
       </div>
     </section>
