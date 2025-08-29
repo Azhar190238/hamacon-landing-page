@@ -64,11 +64,12 @@ const ContactForm = ({ review = false }) => {
 
   return (
     <div className="bg-white text-gray-900 rounded-xl shadow-lg p-6 sm:p-8">
-      <h3 className="text-xl sm:text-2xl font-bold mb-4">
+      <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mx-auto text-center font-bold mb-4">
         Get a FREE Quote 🚀
       </h3>
+      <hr />
 
-      <form className="space-y-4" onSubmit={handleSubmit}>
+      <form className="space-y-4 mt-6" onSubmit={handleSubmit}>
         {/* Full Name */}
         <div>
           <label className="block text-sm font-medium mb-1">
