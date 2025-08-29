@@ -6,6 +6,7 @@ import Image from "next/image";
 import { ShimmerButton } from "./magicui/shimmer-button";
 import Link from "next/link";
 import { PulsatingButton } from "./magicui/pulsating-button";
+import AnimatedContent from "./ui/animatedContent";
 
 const FAQsSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -39,16 +40,20 @@ const FAQsSection = () => {
   };
 
   return (
-    <section id="faqs" className="w-full bg-[#FFEB99] py-16 font-sans">
+    <section id="faqs" className="w-full bg-[#FFEB99] py-16 font-sans overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center mb-12">
+          <AnimatedContent direction="horizontal" distance={100} reverse={true}>
           <span className="bg-black text-white text-xs font-bold px-3 py-1 rounded">
             FAQ AND HELP
           </span>
+          </AnimatedContent>
+           <AnimatedContent direction="horizontal" distance={100} reverse={false}>
           <h2 className="text-3xl md:text-4xl mx-auto lg:text-5xl txt-center max-w-[500px] font-extrabold text-gray-900 mt-4">
             FREQUENTLY ASKED QUESTIONS 🤔
           </h2>
+          </AnimatedContent>
         </div>
 
         {/* FAQs */}
@@ -109,6 +114,7 @@ const FAQsSection = () => {
               </Link>
             </div>
           </div>
+          <AnimatedContent direction="vertical" distance={100} reverse={true}>
           <div className="flex items-center justify-center gap-3 pt-6">
             <div className="flex -space-x-2">
               <Image
@@ -137,6 +143,7 @@ const FAQsSection = () => {
               100% Satisfaction • 100% Success
             </span>
           </div>
+          </AnimatedContent>
         </div>
       </div>
     </section>

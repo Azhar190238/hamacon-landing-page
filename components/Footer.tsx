@@ -50,7 +50,7 @@ export default function Footer() {
           <div className="w-16  border-b-3 border-white border-dotted mb-4"></div>
           <ul className="space-y-3 text-gray-200">
             <li>
-              📞 <Link href="tel:+61498994149">+61 498 994 149</Link>
+             ☎️ <Link href="tel:+61498994149">+61 498 994 149</Link>
             </li>
             <li>
               📧{" "}

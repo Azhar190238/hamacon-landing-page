@@ -4,6 +4,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
+import AnimatedContent from "./ui/animatedContent";
 
 const steps = [
   {
@@ -37,49 +38,64 @@ const sliderImages = [
   "/others/2.jpeg",
   "/others/3.jpeg",
   "/others/4.jpg",
-
 ];
 
 const HowItWorks = () => {
   return (
-    <section className="w-full py-16 bg-white font-sans">
+    <section className="w-full py-16 bg-white font-sans overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Heading */}
         <div className="mb-10">
-          <span className="bg-black text-white text-xs font-bold px-3 py-1 rounded">
-            OUR PROCESS EXPLAINED
-          </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mt-4">
-            HOW IT WORKS
-          </h2>
+          <AnimatedContent direction="horizontal" distance={100} reverse={true}>
+            <span className="bg-black text-white text-xs font-bold px-3 py-1 rounded">
+              OUR PROCESS EXPLAINED
+            </span>
+          </AnimatedContent>
+          <AnimatedContent
+            direction="horizontal"
+            distance={100}
+            reverse={false}
+          >
+            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mt-4">
+              HOW IT WORKS
+            </h2>
+          </AnimatedContent>
         </div>
 
         {/* Content Layout */}
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* Left Side Steps */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {steps.map((step, index) => (
-              <div
-                key={index}
-                className="border border-gray-200 rounded-lg shadow-sm p-6 bg-white hover:shadow-lg transition"
-              >
-                <h3 className="text-2xl lg:text-4xl font-extrabold text-[#FFA100] mb-2">
-                  {step.number}
-                </h3>
-                <h4 className="font-bold text-lg md:text-xl mb-2">{step.title}</h4>
-                <p className="text-gray-600 leading-relaxed text-sm">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
+          <AnimatedContent
+            direction="horizontal"
+            distance={100}
+            reverse={true}
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {steps.map((step, index) => (
+                <div
+                  key={index}
+                  className="border border-gray-200 rounded-lg shadow-sm p-6 bg-white hover:shadow-lg transition"
+                >
+                  <h3 className="text-2xl lg:text-4xl font-extrabold text-[#FFA100] mb-2">
+                    {step.number}
+                  </h3>
+                  <h4 className="font-bold text-lg md:text-xl mb-2">
+                    {step.title}
+                  </h4>
+                  <p className="text-gray-600 leading-relaxed text-sm">
+                    {step.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </AnimatedContent>
 
           {/* Right Side Swiper */}
           <div className="w-full">
             <Swiper
               modules={[Autoplay]}
               autoplay={{ delay: 2000, disableOnInteraction: false }}
-             
               loop={true}
               className="rounded-lg shadow-md"
             >

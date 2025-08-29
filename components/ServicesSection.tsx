@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ShimmerButton } from "./magicui/shimmer-button";
 import { PulsatingButton } from "./magicui/pulsating-button";
 import Link from "next/link";
+import AnimatedContent from "./ui/animatedContent";
 
 const services = [
   {
@@ -82,14 +83,15 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="pb-16 bg-gray-50 -mt-14">
+    <section className="pb-16 bg-gray-50 -mt-14 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Service Cards */}
+         <AnimatedContent direction="vertical" distance={100} reverse={true}>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white relative p-4 z-20 border rounded-xl shadow-md overflow-hidden hover:shadow-xl transition"
+              className="bg-white relative hover:scale-105 transition-all duration-500 p-4 z-20 border rounded-xl shadow-md overflow-hidden hover:shadow-xl"
             >
               {/* Image */}
               <Image
@@ -111,6 +113,7 @@ const ServicesSection = () => {
             </div>
           ))}
         </div>
+        </AnimatedContent>
 
         {/* CTA Section */}
         <div className="text-center">
@@ -131,6 +134,7 @@ const ServicesSection = () => {
             </Link>
             </div>
           </div>
+          <AnimatedContent direction="vertical" distance={100} reverse={true}>
           <div className="flex items-center justify-center gap-3 pt-6">
             <div className="flex -space-x-2">
               <Image
@@ -159,6 +163,7 @@ const ServicesSection = () => {
               100% Satisfaction • 100% Success
             </span>
           </div>
+          </AnimatedContent>
         </div>
       </div>
     </section>

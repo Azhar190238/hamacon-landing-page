@@ -4,10 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import ContactForm from "./common/ContactForm";
 import { ShimmerButton } from "./magicui/shimmer-button";
+import AnimatedContent from "./ui/animatedContent";
+import SplitText from "./ui/splitText";
+import BlurText from "./ui/blurText";
 
 export default function Hero() {
   return (
-    <section className="relative bg-gray-900 text-white">
+    <section className="relative bg-gray-900 text-white overflow-x-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -32,20 +35,29 @@ export default function Hero() {
             priority
           />
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
-            Melbourne’s <span className="text-yellow-400">5-Star Rated</span>{" "}
-            Concrete Slab Experts
-          </h1>
-
-          <p className="text-lg text-gray-200 max-w-xl">
-            At Boparai Concreting, we pride ourselves in offering Site Cuts,
-            Site Cleans & Concrete Slabs. From Small Builds to Commercial
-            Projects, we have the Skills & Gear to Handle Any Job.
-          </p>
-
-          <p className="text-lg font-medium">
-            Call us today to get a FREE quote!
-          </p>
+          <SplitText
+            text={"Melbourne’s 5-Star Rated Concrete Slab Experts"}
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight"
+            delay={20}
+            heighlightsword={[2, 4, 7]}
+            heighlightclass={"text-[#FFA100]"}
+          />
+          <BlurText
+            text={
+              "At Boparai Concreting, we pride ourselves in offering Site Cuts, Site Cleans & Concrete Slabs. From Small Builds to Commercial Projects, we have the Skills & Gear to Handle Any Job."
+            }
+            className="!text-center flex max-w-xl justify-center  mt-8"
+            delay={200}
+          />
+          <AnimatedContent
+            direction="vertical"
+            distance={100}
+            reverse={true}
+          >
+            <p className="text-lg font-medium">
+              Call us today to get a FREE quote!
+            </p>
+          </AnimatedContent>
 
           {/* Phone Button */}
           <div className=" animate-bounce-slow">
@@ -58,100 +70,43 @@ export default function Hero() {
               </ShimmerButton>
             </a>
           </div>
-
-          {/* Reviews (avatars + text) */}
-          <div className="flex items-center gap-3 pt-3">
-            <div className="flex -space-x-2">
-              <Image
-                src="/hero/avatar1.jpg"
-                alt="Customer"
-                width={40}
-                height={40}
-                className="w-10 h-10 rounded-full border-2 border-white"
-              />
-              <Image
-                src="/hero/avatar2.jpg"
-                alt="Customer"
-                width={40}
-                height={40}
-                className="w-10 h-10 rounded-full border-2 border-white"
-              />
-              <Image
-                src="/hero/avatar3.jpeg"
-                alt="Customer"
-                width={40}
-                height={40}
-                className="w-10 h-10 rounded-full border-2 border-white"
-              />
+          <AnimatedContent direction="horizontal" distance={100} reverse={true}>
+            {/* Reviews (avatars + text) */}
+            <div className="flex items-center gap-3 pt-3">
+              <div className="flex -space-x-2">
+                <Image
+                  src="/hero/avatar1.jpg"
+                  alt="Customer"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10 rounded-full border-2 border-white"
+                />
+                <Image
+                  src="/hero/avatar2.jpg"
+                  alt="Customer"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10 rounded-full border-2 border-white"
+                />
+                <Image
+                  src="/hero/avatar3.jpeg"
+                  alt="Customer"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10 rounded-full border-2 border-white"
+                />
+              </div>
+              <span className="text-sm text-gray-200">
+                100% Satisfaction • 100% Success
+              </span>
             </div>
-            <span className="text-sm text-gray-200">
-              100% Satisfaction • 100% Success
-            </span>
-          </div>
+          </AnimatedContent>
         </div>
-
-        {/* Right Form */}
-        {/* <div className="bg-white text-gray-900 rounded-xl shadow-lg p-6 sm:p-8">
-          <h3 className="text-xl sm:text-2xl font-bold mb-4">
-            Get a FREE Quote 🚀
-          </h3>
-
-          <form className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium mb-1">
-                Full Name <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Name"
-                className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-400"
-              />
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium mb-1">
-                  Phone Number <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="Number"
-                  className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-400"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-1">
-                  Email Address <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-400"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium mb-1">
-                Describe Your Project
-              </label>
-              <textarea
-                rows={4}
-                placeholder="Type here..."
-                className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-400"
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              className="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
-            >
-              GET A FREE QUOTE NOW
-            </button>
-          </form>
-        </div> */}
-        <ContactForm />
+        <div className="w-full lg:w-2/5">
+          <AnimatedContent direction="horizontal" distance={100} reverse={false}>
+          <ContactForm />
+        </AnimatedContent>
+        </div>
       </div>
     </section>
   );

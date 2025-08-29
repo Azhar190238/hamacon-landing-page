@@ -4,6 +4,7 @@ import { FaStar } from "react-icons/fa";
 import { ShimmerButton } from "./magicui/shimmer-button";
 import Link from "next/link";
 import { PulsatingButton } from "./magicui/pulsating-button";
+import AnimatedContent from "./ui/animatedContent";
 
 const testimonials = [
   {
@@ -31,24 +32,29 @@ const testimonials = [
 
 const ReviewsSection = () => {
   return (
-    <section id="reviews" className="w-full py-16 bg-white font-sans">
+    <section id="reviews" className="w-full py-16 bg-white font-sans overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center mb-12">
-          <span className="bg-black text-white text-xs font-bold px-3 py-1 rounded">
-            REVIEWS
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-[40px] font-extrabold text-[#000] mt-4">
-            WHY CUSTOMERS CHOOSE US
-          </h2>
+          <AnimatedContent direction="horizontal" distance={100} reverse={true}>
+            <span className="bg-black text-white text-xs font-bold px-3 py-1 rounded">
+              REVIEWS
+            </span>
+          </AnimatedContent>
+          <AnimatedContent direction="horizontal" distance={100} reverse={false}>
+            <h2 className="text-3xl md:text-4xl lg:text-[40px] font-extrabold text-[#000] mt-4">
+              WHY CUSTOMERS CHOOSE US
+            </h2>
+          </AnimatedContent>
         </div>
 
         {/* Testimonials */}
+        <AnimatedContent direction="vertical" distance={100} reverse={false}>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((t, index) => (
             <div
               key={index}
-              className="border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition"
+              className="border border-gray-200 hover:scale-105 transition-all duration-500 rounded-lg p-6 shadow-sm hover:shadow-md"
             >
               <p className=" text-xl md:text-2xl lg:text-[28px] text-[#000] font-bold mb-3">
                 <span className="text-2xl md:text-3xl font-bold mr-2">“</span>
@@ -71,6 +77,7 @@ const ReviewsSection = () => {
             </div>
           ))}
         </div>
+        </AnimatedContent>
 
         <div className="text-center mt-12">
           <div className="flex flex-col md:flex-row justify-center items-center gap-4">
@@ -90,6 +97,7 @@ const ReviewsSection = () => {
               </Link>
             </div>
           </div>
+           <AnimatedContent direction="vertical" distance={100} reverse={false}>
           <div className="flex items-center justify-center  mx-auto gap-3 pt-3">
             <div className="flex -space-x-2">
               <Image
@@ -118,6 +126,7 @@ const ReviewsSection = () => {
               100% Satisfaction • 100% Success
             </span>
           </div>
+          </AnimatedContent>
         </div>
       </div>
     </section>

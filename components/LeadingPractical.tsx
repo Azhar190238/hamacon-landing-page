@@ -3,10 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import ContactForm from "./common/ContactForm";
+import AnimatedContent from "./ui/animatedContent";
 
 export default function LeadingPractical() {
   return (
-    <section id="contact" className="relative bg-gray-900 text-white">
+    <section id="contact" className="relative bg-gray-900 text-white overflow-x-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -22,25 +23,48 @@ export default function LeadingPractical() {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-16 flex flex-col lg:flex-row  gap-6 xl:gap-10 items-center">
         {/* Left Content */}
         <div className="space-y-6 w-full lg:w-[60%]">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold max-w-[500px] leading-tight">
-            The leading practical and aesthetic concreting provider in
-            Melbourne.
-          </h1>
-
-          <p className="text-lg text-gray-200 max-w-xl">
-            Get your Concrete Slabs, Driveways and Decorative Concreting done by
-            Sydney’s top-rated experts. At Boparai Concreting, we take pride in
-            delivering both beautiful and practical concreting services.
-          </p>
-          <p className="text-lg text-gray-200 max-w-xl">
-            No matter the size of your project, our skilled team will get it
-            done on time, every time.
-          </p>
-
-          <p className="text-lg font-medium">
-           Call us now for a free consultation and start building strong foundations today!
-          </p>
-
+          <AnimatedContent
+            direction="horizontal"
+            distance={100}
+            reverse={true}
+          >
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold max-w-[500px] leading-tight">
+              The leading practical and aesthetic concreting provider in
+              Melbourne.
+            </h1>
+          </AnimatedContent>
+          <AnimatedContent
+            direction="horizontal"
+            distance={100}
+            reverse={false}
+          >
+            <p className="text-lg text-gray-200 max-w-xl">
+              Get your Concrete Slabs, Driveways and Decorative Concreting done
+              by Sydney’s top-rated experts. At Boparai Concreting, we take
+              pride in delivering both beautiful and practical concreting
+              services.
+            </p>
+          </AnimatedContent>
+          <AnimatedContent
+            direction="horizontal"
+            distance={100}
+            reverse={true}
+          >
+            <p className="text-lg text-gray-200 max-w-xl">
+              No matter the size of your project, our skilled team will get it
+              done on time, every time.
+            </p>
+          </AnimatedContent>
+          <AnimatedContent
+            direction="horizontal"
+            distance={100}
+            reverse={false}
+          >
+            <p className="text-lg font-medium">
+              Call us now for a free consultation and start building strong
+              foundations today!
+            </p>
+          </AnimatedContent>
           {/* Phone Button */}
           <Link
             href="tel:+61498994149"
@@ -48,41 +72,52 @@ export default function LeadingPractical() {
           >
             ☎️ +61 498 994 149
           </Link>
-
-          {/* Reviews (avatars + text) */}
-          <div className="flex items-center gap-3 pt-3">
-            <div className="flex -space-x-2">
-              <Image
-                src="/hero/avatar1.jpg"
-                alt="Customer"
-                width={40}
-                height={40}
-                className="w-10 h-10 rounded-full border-2 border-white"
-              />
-              <Image
-                src="/hero/avatar2.jpg"
-                alt="Customer"
-                width={40}
-                height={40}
-                className="w-10 h-10 rounded-full border-2 border-white"
-              />
-              <Image
-                src="/hero/avatar3.jpeg"
-                alt="Customer"
-                width={40}
-                height={40}
-                className="w-10 h-10 rounded-full border-2 border-white"
-              />
+          <AnimatedContent
+            direction="vertical"
+            distance={100}
+            reverse={false}
+          >
+            {/* Reviews (avatars + text) */}
+            <div className="flex items-center gap-3 pt-3">
+              <div className="flex -space-x-2">
+                <Image
+                  src="/hero/avatar1.jpg"
+                  alt="Customer"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10 rounded-full border-2 border-white"
+                />
+                <Image
+                  src="/hero/avatar2.jpg"
+                  alt="Customer"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10 rounded-full border-2 border-white"
+                />
+                <Image
+                  src="/hero/avatar3.jpeg"
+                  alt="Customer"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10 rounded-full border-2 border-white"
+                />
+              </div>
+              <span className="text-sm text-gray-200">
+                100% Satisfaction • 100% Success
+              </span>
             </div>
-            <span className="text-sm text-gray-200">
-              100% Satisfaction • 100% Success
-            </span>
-          </div>
+          </AnimatedContent>
         </div>
 
         {/* Right Form */}
         <div>
-          <ContactForm review={true}/>
+          <AnimatedContent
+            direction="horizontal"
+            distance={100}
+            reverse={false}
+          >
+          <ContactForm review={true} />
+          </AnimatedContent>
         </div>
       </div>
     </section>

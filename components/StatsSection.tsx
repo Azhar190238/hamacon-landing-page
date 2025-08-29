@@ -5,6 +5,7 @@ import { FaClock, FaDollarSign, FaFileAlt } from "react-icons/fa";
 import { ShimmerButton } from "./magicui/shimmer-button";
 import Link from "next/link";
 import { PulsatingButton } from "./magicui/pulsating-button";
+import AnimatedContent from "./ui/animatedContent";
 
 const StatsSection = () => {
   const stats = [
@@ -32,7 +33,7 @@ const StatsSection = () => {
 
   return (
     <section
-      className="relative w-full py-16 text-center"
+      className="relative w-full py-16 text-center overflow-x-hidden"
       style={{
         backgroundImage: "url('/bghero.jpg')", // replace with your background image
         backgroundSize: "cover",
@@ -46,35 +47,43 @@ const StatsSection = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* Top Heading */}
         <div className="mb-12">
-          <h1 className="text-lg md:text-xl font-extrabold bg-[#000] text-[#fff] mb-4 max-w-[510px] mx-auto px-2 py-1">
-            Building Strong Foundations, One Slab at a Time
-          </h1>
-          <p className="text-xl md:text-3xl lg:text-5xl font-bold uppercase text-[#000]">
-            We specialise in delivering lasting foundations & transforming
-            spaces
-          </p>
+          <AnimatedContent direction="horizontal" distance={100} reverse={true}>
+            <h1 className="text-lg md:text-xl font-extrabold bg-[#000] text-[#fff] mb-4 max-w-[510px] mx-auto px-2 py-1">
+              Building Strong Foundations, One Slab at a Time
+            </h1>
+          </AnimatedContent>
+          <AnimatedContent
+            direction="horizontal"
+            distance={100}
+            reverse={false}
+          >
+            <p className="text-xl md:text-3xl lg:text-5xl font-bold uppercase text-[#000]">
+              We specialise in delivering lasting foundations & transforming
+              spaces
+            </p>
+          </AnimatedContent>
         </div>
-
-        {/* Stats Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-          {stats.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-xl transition"
-            >
-              {item.value ? (
-                <h2 className="text-5xl font-extrabold text-yellow-500 mb-2">
-                  {item.value}
-                </h2>
-              ) : (
-                <div className="mb-2">{item.icon}</div>
-              )}
-              <p className="text-lg md:text-xl lg:text-2xl font-bold text-[#000]">
-                {item.label}
-              </p>
-            </div>
-          ))}
-        </div>
+        <AnimatedContent direction="vertical" distance={100} reverse={true}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            {stats.map((item, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl hover:scale-105 transition-all duration-500 shadow-lg p-8 flex flex-col items-center text-center hover:shadow-xl"
+              >
+                {item.value ? (
+                  <h2 className="text-5xl font-extrabold text-yellow-500 mb-2">
+                    {item.value}
+                  </h2>
+                ) : (
+                  <div className="mb-2">{item.icon}</div>
+                )}
+                <p className="text-lg md:text-xl lg:text-2xl font-bold text-[#000]">
+                  {item.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </AnimatedContent>
 
         {/* CTA Section */}
         <div className="text-center">
@@ -95,6 +104,7 @@ const StatsSection = () => {
               </Link>
             </div>
           </div>
+          <AnimatedContent direction="vertical" distance={100} reverse={false}>
           <div className="flex items-center justify-center gap-3 pt-6">
             <div className="flex -space-x-2">
               <Image
@@ -123,6 +133,7 @@ const StatsSection = () => {
               100% Satisfaction • 100% Success
             </span>
           </div>
+          </AnimatedContent>
         </div>
       </div>
     </section>
