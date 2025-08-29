@@ -127,7 +127,7 @@ const ServicesSection = () => {
             </div>
             <div className="animate-bounce-slow">
             <Link href="/#quote" className="text-white animate-accordion-up">
-            <PulsatingButton>Get a FREE Quote 🚀111</PulsatingButton>
+            <PulsatingButton>Get a FREE Quote 🚀</PulsatingButton>
             </Link>
             </div>
           </div>
