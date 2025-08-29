@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import Image from "next/image";
 
 const steps = [
   {
@@ -62,10 +63,10 @@ const HowItWorks = () => {
                 key={index}
                 className="border border-gray-200 rounded-lg shadow-sm p-6 bg-white hover:shadow-lg transition"
               >
-                <h3 className="text-2xl font-extrabold text-yellow-500 mb-2">
+                <h3 className="text-2xl lg:text-4xl font-extrabold text-[#FFA100] mb-2">
                   {step.number}
                 </h3>
-                <h4 className="font-bold text-lg mb-2">{step.title}</h4>
+                <h4 className="font-bold text-lg md:text-xl mb-2">{step.title}</h4>
                 <p className="text-gray-600 leading-relaxed text-sm">
                   {step.description}
                 </p>
@@ -76,18 +77,20 @@ const HowItWorks = () => {
           {/* Right Side Swiper */}
           <div className="w-full">
             <Swiper
-              modules={[Autoplay, Navigation]}
-              autoplay={{ delay: 3000, disableOnInteraction: false }}
-              navigation
+              modules={[Autoplay]}
+              autoplay={{ delay: 2000, disableOnInteraction: false }}
+             
               loop={true}
               className="rounded-lg shadow-md"
             >
               {sliderImages.map((img, index) => (
                 <SwiperSlide key={index}>
-                  <img
+                  <Image
                     src={img}
                     alt={`Slide ${index + 1}`}
-                    className="w-full h-[350px] md:h-[450px] object-cover rounded-lg"
+                    width={1000}
+                    height={1000}
+                    className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover rounded-lg"
                   />
                 </SwiperSlide>
               ))}

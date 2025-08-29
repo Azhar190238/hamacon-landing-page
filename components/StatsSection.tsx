@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { FaClock, FaDollarSign, FaFileAlt } from "react-icons/fa";
 import { ShimmerButton } from "./magicui/shimmer-button";
+import Link from "next/link";
+import { PulsatingButton } from "./magicui/pulsating-button";
 
 const StatsSection = () => {
   const stats = [
@@ -87,12 +89,11 @@ const StatsSection = () => {
                 </ShimmerButton>
               </a>
             </div>
-            <a
-              href="#quote"
-              className="bg-black text-white px-6 py-3 rounded-md shadow-md font-semibold flex items-center gap-2 hover:bg-gray-800 border-2 border-yellow-500"
-            >
-              Get a FREE Quote 🚀
-            </a>
+            <div className="animate-bounce-slow">
+              <Link href="/#quote" className="text-white animate-accordion-up">
+                <PulsatingButton>Get a FREE Quote 🚀111</PulsatingButton>
+              </Link>
+            </div>
           </div>
           <div className="flex items-center justify-center gap-3 pt-6">
             <div className="flex -space-x-2">

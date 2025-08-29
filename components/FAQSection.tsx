@@ -4,6 +4,8 @@ import { FaMinus, FaPlus } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ShimmerButton } from "./magicui/shimmer-button";
+import Link from "next/link";
+import { PulsatingButton } from "./magicui/pulsating-button";
 
 const FAQsSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -91,25 +93,21 @@ const FAQsSection = () => {
         <div className="text-center mt-12">
           <h3 className="text-2xl font-bold mb-4">HAVE ANOTHER QUESTION?</h3>
           <div className="flex flex-col md:flex-row justify-center items-center gap-4">
-           <div className=" animate-bounce-slow">
-            <a
-              href="tel:+61498994149"
-              className=""
-            >
-              <ShimmerButton  background="#FFA100" className="shadow-2xl">
-                <span>☎️</span>
-                <span className="whitespace-pre-wrap text-center  font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-                  +61 498 994 149
-                </span>
-              </ShimmerButton>
-            </a>
-          </div>
-            <a
-              href="#quote"
-              className="bg-black text-white px-6 py-3 rounded-md shadow-sm font-semibold flex items-center gap-2 hover:bg-gray-800"
-            >
-              Get a FREE Quote 🚀
-            </a>
+            <div className=" animate-bounce-slow">
+              <a href="tel:+61498994149" className="">
+                <ShimmerButton background="#FFA100" className="shadow-2xl">
+                  <span>☎️</span>
+                  <span className="whitespace-pre-wrap text-center  font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                    +61 498 994 149
+                  </span>
+                </ShimmerButton>
+              </a>
+            </div>
+            <div className="animate-bounce-slow">
+              <Link href="/#quote" className="text-white animate-accordion-up">
+                <PulsatingButton>Get a FREE Quote 🚀111</PulsatingButton>
+              </Link>
+            </div>
           </div>
           <div className="flex items-center justify-center gap-3 pt-6">
             <div className="flex -space-x-2">
