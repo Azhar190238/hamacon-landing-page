@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import ContactForm from "./common/ContactForm";
 
 export default function Hero() {
   return (
@@ -83,7 +84,7 @@ export default function Hero() {
         </div>
 
         {/* Right Form */}
-        <div className="bg-white text-gray-900 rounded-xl shadow-lg p-6 sm:p-8">
+        {/* <div className="bg-white text-gray-900 rounded-xl shadow-lg p-6 sm:p-8">
           <h3 className="text-xl sm:text-2xl font-bold mb-4">
             Get a FREE Quote 🚀
           </h3>
@@ -142,7 +143,8 @@ export default function Hero() {
               GET A FREE QUOTE NOW
             </button>
           </form>
-        </div>
+        </div> */}
+        <ContactForm/>
       </div>
     </section>
   );

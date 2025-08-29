@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import ContactForm from "./common/ContactForm";
 
 export default function LeadingPractical() {
   return (
@@ -18,37 +19,34 @@ export default function LeadingPractical() {
         <div className="absolute inset-0 bg-black/70"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-28 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-16 flex flex-col lg:flex-row  gap-6 xl:gap-10 items-center">
         {/* Left Content */}
-        <div className="space-y-6">
-          <Image
-            src="/logo2.png"
-            alt="Boparai Concreting Logo"
-            width={260}
-            height={70}
-            className="object-contain"
-            priority
-          />
-
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
-            Melbourne’s <span className="text-yellow-400">5-Star Rated</span>{" "}
-            Concrete Slab Experts
+        <div className="space-y-6 w-full lg:w-[60%]">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold max-w-[500px] leading-tight">
+            The leading practical and aesthetic concreting provider in
+            Melbourne.
           </h1>
 
           <p className="text-lg text-gray-200 max-w-xl">
-            At Boparai Concreting, we pride ourselves in offering Site Cuts, Site
-            Cleans & Concrete Slabs. From Small Builds to Commercial Projects,
-            we have the Skills & Gear to Handle Any Job.
+            Get your Concrete Slabs, Driveways and Decorative Concreting done by
+            Sydney’s top-rated experts. At Boparai Concreting, we take pride in
+            delivering both beautiful and practical concreting services.
+          </p>
+          <p className="text-lg text-gray-200 max-w-xl">
+            No matter the size of your project, our skilled team will get it
+            done on time, every time.
           </p>
 
-          <p className="text-lg font-medium">Call us today to get a FREE quote!</p>
+          <p className="text-lg font-medium">
+           Call us now for a free consultation and start building strong foundations today!
+          </p>
 
           {/* Phone Button */}
           <Link
             href="tel:+61498994149"
-            className="inline-flex items-center gap-2 bg-yellow-400 text-black font-semibold px-6 py-4 rounded-lg shadow-md hover:bg-yellow-500 transition"
+            className="inline-flex text-xl md:text-3xl lg:text-5xl items-center gap-2  text-[#fff] font-bold px-6 py-4 rounded-lg shadow-md hover:text-yellow-500 transition"
           >
-            📞 +61 498 994 149
+            ☎️ +61 498 994 149
           </Link>
 
           {/* Reviews (avatars + text) */}
@@ -83,65 +81,8 @@ export default function LeadingPractical() {
         </div>
 
         {/* Right Form */}
-        <div className="bg-white text-gray-900 rounded-xl shadow-lg p-6 sm:p-8">
-          <h3 className="text-xl sm:text-2xl font-bold mb-4">
-            Get a FREE Quote 🚀
-          </h3>
-
-          <form className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium mb-1">
-                Full Name <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Name"
-                className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-400"
-              />
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium mb-1">
-                  Phone Number <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="Number"
-                  className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-400"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-1">
-                  Email Address <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-400"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium mb-1">
-                Describe Your Project
-              </label>
-              <textarea
-                rows={4}
-                placeholder="Type here..."
-                className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-400"
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              className="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
-            >
-              GET A FREE QUOTE NOW
-            </button>
-          </form>
+        <div>
+          <ContactForm review={true}/>
         </div>
       </div>
     </section>
