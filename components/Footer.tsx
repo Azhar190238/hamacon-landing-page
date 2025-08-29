@@ -4,7 +4,43 @@ import { CiLocationOn } from "react-icons/ci";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { MdArrowForwardIos } from "react-icons/md";
 import ScrollToTopButton from "./ScrollArrow";
+import Swal from "sweetalert2";
+import { useState } from "react";
 export default function Footer() {
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("https://formspree.io/f/xgvlodqa", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email }),
+      });
+
+      if (response.ok) {
+        Swal.fire({
+          icon: "success",
+          title: "Thank you!",
+          text: "You have been subscribed successfully!",
+          timer: 3000,
+          timerProgressBar: true,
+          showConfirmButton: false,
+        });
+        setEmail(""); // Reset the input
+      } else {
+        throw new Error("Form submission failed.");
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops!",
+        text: "Something went wrong. Please try again.",
+      });
+      console.error(error);
+    }
+  };
   return (
     <footer className="bg-[#022133] text-white py-12 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
@@ -123,15 +159,18 @@ export default function Footer() {
           </div>
 
           {/* Newsletter */}
-          <form className="space-y-2">
+          <form className="space-y-2" onSubmit={handleSubmit}>
             <input
               type="email"
               placeholder="Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
               className="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none border bg-white border-white"
             />
             <button
               type="submit"
-              className="w-full bg-white text-red-600 font-semibold py-2 rounded-md hover:bg-gray-100 transition"
+              className="w-full bg-[#F9651E]/80 hover:bg-[#F9651E] text-white font-semibold py-2 rounded-md transition-all"
             >
               Send
             </button>
@@ -145,7 +184,7 @@ export default function Footer() {
         Reserved.
       </div>
       <div className="absolute bottom-4 right-4">
-        <ScrollToTopButton/>
+        <ScrollToTopButton />
       </div>
     </footer>
   );
