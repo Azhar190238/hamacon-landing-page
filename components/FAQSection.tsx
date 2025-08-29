@@ -1,9 +1,11 @@
 "use client";
 import { useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const FAQsSection = () => {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqs = [
     {
@@ -14,40 +16,40 @@ const FAQsSection = () => {
     {
       question: "How experienced is Boparai Concreting?",
       answer:
-        "Our team has years of experience in the concreting industry, delivering projects of all sizes with precision, professionalism, and quality workmanship.",
+        "Boasting more than two decades of expertise, Boparai Concreting has established itself as a prominent success in Melbourne. Our team is composed of highly skilled and certified professionals committed to providing exceptional concreting services.",
     },
     {
       question:
         "How does Boparai Concreting ensure project completion within the agreed time frame?",
       answer:
-        "We pride ourselves on efficient project management and open communication, ensuring every project is completed within the agreed timeframe without compromising on quality.",
+        "Led by AMAR, our team of dedicated professionals ensures timely project completion. No matter the size of the project, we focus on meeting deadlines and providing outstanding results at competitive rates",
     },
     {
       question: "Can I request a quote from Boparai Concreting?",
       answer:
-        "Yes, you can easily request a free quote by contacting us directly or through our website. We’ll assess your requirements and provide a detailed and transparent estimate.",
+        "Absolutely! Feel free to request a no-obligation FREE quote by filling in the form or by giving us a call to schedule a visit. Our team will come to your location, assess your needs in detail, and then provide you with a personalised quote for FREE!",
     },
   ];
 
-  const toggleFAQ = (index) => {
+  const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
     <section id="faqs" className="w-full bg-[#FFEB99] py-16 font-sans">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center mb-12">
           <span className="bg-black text-white text-xs font-bold px-3 py-1 rounded">
             FAQ AND HELP
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mt-4">
+          <h2 className="text-3xl md:text-4xl mx-auto lg:text-5xl txt-center max-w-[500px] font-extrabold text-gray-900 mt-4">
             FREQUENTLY ASKED QUESTIONS 🤔
           </h2>
         </div>
 
         {/* FAQs */}
-        <div className="bg-white/40 rounded-md divide-y divide-gray-300 shadow-md">
+        <div className="bg-transparent rounded-md divide-y divide-gray-300 shadow-md">
           {faqs.map((faq, index) => (
             <div key={index}>
               <button
@@ -63,11 +65,23 @@ const FAQsSection = () => {
                   <FaPlus className="text-gray-800" />
                 )}
               </button>
-              {openIndex === index && (
-                <div className="px-5 pb-5 text-gray-700 bg-white/60">
-                  <p>{faq.answer}</p>
-                </div>
-              )}
+
+              <AnimatePresence initial={false}>
+                {openIndex === index && (
+                  <motion.div
+                    key="content"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    className="overflow-hidden px-5"
+                  >
+                    <div className="pb-5 text-gray-700">
+                      <p>{faq.answer}</p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           ))}
         </div>
@@ -89,9 +103,34 @@ const FAQsSection = () => {
               Get a FREE Quote 🚀
             </a>
           </div>
-          <p className="mt-4 text-gray-800 font-semibold">
-            100% Satisfaction 100% Success
-          </p>
+          <div className="flex items-center justify-center gap-3 pt-6">
+            <div className="flex -space-x-2">
+              <Image
+                src="/hero/avatar1.jpg"
+                alt="Customer"
+                width={40}
+                height={40}
+                className="w-10 h-10 rounded-full border-2 border-white"
+              />
+              <Image
+                src="/hero/avatar2.jpg"
+                alt="Customer"
+                width={40}
+                height={40}
+                className="w-10 h-10 rounded-full border-2 border-white"
+              />
+              <Image
+                src="/hero/avatar3.jpeg"
+                alt="Customer"
+                width={40}
+                height={40}
+                className="w-10 h-10 rounded-full border-2 border-white"
+              />
+            </div>
+            <span className="font-bold text-[#000]">
+              100% Satisfaction • 100% Success
+            </span>
+          </div>
         </div>
       </div>
     </section>
