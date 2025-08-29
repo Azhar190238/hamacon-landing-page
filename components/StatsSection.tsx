@@ -43,10 +43,10 @@ const StatsSection = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* Top Heading */}
         <div className="mb-12">
-          <h1 className="text-lg md:text-xl font-extrabold bg-[#000] text-[#fff] mb-4 max-w-[500px] mx-auto px-4 py-1">
+          <h1 className="text-lg md:text-xl font-extrabold bg-[#000] text-[#fff] mb-4 max-w-[510px] mx-auto px-2 py-1">
             Building Strong Foundations, One Slab at a Time
           </h1>
-          <p className="text-lg md:text-2xl font-semibold text-gray-800">
+          <p className="text-xl md:text-3xl lg:text-5xl font-bold uppercase text-[#000]">
             We specialise in delivering lasting foundations & transforming
             spaces
           </p>
@@ -66,7 +66,7 @@ const StatsSection = () => {
               ) : (
                 <div className="mb-2">{item.icon}</div>
               )}
-              <p className="text-lg font-semibold text-gray-800">
+              <p className="text-lg md:text-xl lg:text-2xl font-bold text-[#000]">
                 {item.label}
               </p>
             </div>

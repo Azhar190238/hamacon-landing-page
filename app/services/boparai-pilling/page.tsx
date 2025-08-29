@@ -18,6 +18,7 @@ export default function CivilEngineering() {
   return (
     <>
       <CommonHeader heading="Boparai Pilling" description="Boparai Pilling" />
+      <div className="max-w-7xl mx-auto px-6 lg:px-0 my-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 !mx-auto lg:grid-cols-3 gap-6 mb-12">
           {services.map((service, index) => (
             <div
@@ -37,11 +38,14 @@ export default function CivilEngineering() {
                 <h3 className="text-xl font-bold text-center text-[#000] mb-2">
                   {service.title}
                 </h3>
-                <p className="text-gray-800 text-center">{service.description}</p>
+                <p className="text-gray-800 text-center">
+                  {service.description}
+                </p>
               </div>
             </div>
           ))}
         </div>
+      </div>
     </>
   );
 }
